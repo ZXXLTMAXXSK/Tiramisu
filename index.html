@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRINCIPAL</title>
+    <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+
+<body>
+<section class="contenedor-fondo-animado">
+    <div class="animacion">
+        <!--  -->
+        <span class="uno"></span>
+        <span class="dos"></span>
+        <span class="tres"></span>
+        <span class="cuatro"></span>
+        <!--  -->
+        <span class="uno"></span>
+        <span class="dos"></span>
+        <span class="tres"></span>
+        <span class="cuatro"></span>
+        <!--  -->
+        <span class="uno"></span>
+        <span class="dos"></span>
+        <span class="tres"></span>
+        <span class="cuatro"></span>
+    </div>
+    <div class="seccion-contenido">
+        <div class="contenido">
+            <h4>Tiramisú </h4>
+            <p>No es solo un postre… es una experiencia. Una combinación perfecta entre cremosidad, suavidad y frescura que transforma cualquier momento en algo especial. </p>
+            <ul>
+                <li>Desliza para Abajo</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section id="sec1">
+    <div class="contenedor-izquierdo">
+        <h2 class="animate__animated">NUESTRA ESENCIA</h2>
+        <p class="subtitulo animate__animated">El antojo que no sabías que necesitabas</p>
+        <p class="descripcion animate__animated">Nuestro tiramisú está pensado para quienes buscan algo más que un postre. Es suave, ligero y con una textura que se derrite en tu boca.</p>
+        <p class="descripcion animate__animated">Cada capa está hecha para lograr el equilibrio perfecto entre dulzura y frescura.</p>
+    </div>
+    <div class="contenedor-derecho">
+        <img src="img/img1.jpg" alt="Tiramisú">
+    </div>
+</section>
+</section>
+
+
+<section id="sec2">
+    <div class="contenedor-izquierdo-imagen">
+        <img src="img/img2.jpg" alt="Tiramisú - ¿Por qué elegirnos?">
+    </div>
+    <div class="contenedor-derecho-info">
+        <h2 class="animate__animated">¿Por qué elegirnos?</h2>
+        <ul>
+            <li class="animate__animated">Textura cremosa y delicada</li>
+            <li class="animate__animated">Sabor equilibrado (no empalagoso)</li>
+            <li class="animate__animated">Perfecto para cualquier momento del día</li>
+            <li class="animate__animated">Ideal para compartir… o no</li>
+        </ul>
+    </div>
+</section>
+
+
+
+<section id="sec3">
+    <div class="contenido-central">
+        <h2 class="animate__animated">LA COMBINACIÓN PERFECTA</h2>
+        <p class="subtitulo animate__animated">Porque lo bueno se disfruta mejor acompañado.</p>
+        <p class="descripcion animate__animated">La suavidad del tiramisú + la frescura del té helado crean una experiencia irresistible.</p>
+        <p class="destacado animate__animated">Un contraste que refresca y enamora.</p>
+    </div>
+</section>
+
+
+
+<section id="sec4">
+    <div class="cards-container">
+        <!-- CARTA 1 - IZQUIERDA -->
+        <div class="card animate__animated" id="card1">
+            <h2>PARA CUALQUIER MOMENTO</h2>
+            <ul>
+                <li>Después de un día pesado</li>
+                <li>Para consentirte</li>
+                <li>Para compartir con amigos</li>
+                <li>Para darte un gusto sin culpa</li>
+            </ul>
+            <p class="frase-final">Siempre es un buen momento para algo delicioso.</p>
+        </div>
+
+        <!-- CARTA 2 - DERECHA -->
+        <div class="card animate__animated" id="card2">
+            <h2>NUESTRA PASIÓN</h2>
+            <p class="descripcion-pasion">Este proyecto nace del deseo de crear un postre que no solo se vea bien, sino que haga sentir bien.</p>
+            <p class="descripcion-pasion">Cada detalle está pensado para que disfrutes algo auténtico, sencillo y delicioso.</p>
+        </div>
+    </div>
+</section>
+
+
+
+<section id="sec5"></section>
+
+
+
+<script>
+    // Función para verificar si un elemento está visible en la pantalla
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+            rect.bottom >= 0
+        );
+    }
+
+    // Función para activar las animaciones de SECCIÓN 1
+    function checkAnimationsSec1() {
+        const section = document.getElementById('sec1');
+        if (!section) return;
+        
+        const animatedElements = section.querySelectorAll('.animate__animated');
+        
+        if (isElementInViewport(section)) {
+            if (!animatedElements[0].classList.contains('animate__backInLeft')) {
+                animatedElements[0].classList.add('animate__backInLeft');
+                for (let i = 1; i < animatedElements.length; i++) {
+                    animatedElements[i].classList.add('animate__fadeIn');
+                    animatedElements[i].style.animationDelay = (0.2 * i) + 's';
+                }
+            }
+        }
+    }
+
+    // Función para activar las animaciones de SECCIÓN 2
+    function checkAnimationsSec2() {
+        const section = document.getElementById('sec2');
+        if (!section) return;
+        
+        const animatedElements = section.querySelectorAll('.animate__animated');
+        
+        if (isElementInViewport(section)) {
+            if (!animatedElements[0].classList.contains('animate__bounceInRight')) {
+                animatedElements[0].classList.add('animate__bounceInRight');
+                for (let i = 1; i < animatedElements.length; i++) {
+                    animatedElements[i].classList.add('animate__fadeIn');
+                    animatedElements[i].style.animationDelay = (0.2 * i) + 's';
+                }
+            }
+        }
+    }
+
+    // Función para activar las animaciones de SECCIÓN 3 - CORREGIDA
+    function checkAnimationsSec3() {
+        const section = document.getElementById('sec3');
+        if (!section) return;
+        
+        const animatedElements = section.querySelectorAll('.animate__animated');
+        
+        if (isElementInViewport(section)) {
+            animatedElements.forEach((el, index) => {
+                // Verificar si ya tiene las clases de animación
+                if (!el.classList.contains('animate__zoomInDown') && !el.classList.contains('animate__zoomInUp')) {
+                    // Asignar la animación según el tipo de elemento
+                    if (el.tagName === 'H2') {
+                        el.classList.add('animate__zoomInDown');
+                    } else {
+                        el.classList.add('animate__zoomInUp');
+                    }
+                    
+                    // Hacer visible el elemento
+                    el.style.visibility = 'visible';
+                    el.style.opacity = '1';
+                    
+                    // Agregar delay progresivo
+                    el.style.animationDelay = (index * 0.3) + 's';
+                }
+            });
+        }
+    }
+
+    // Función para activar las animaciones de SECCIÓN 4 (MODIFICADA)
+function checkAnimationsSec4() {
+    const section = document.getElementById('sec4');
+    if (!section) return;
+    
+    if (isElementInViewport(section)) {
+        // Card 1 - zoomInLeft
+        const card1 = document.getElementById('card1');
+        if (card1 && !card1.classList.contains('animate__zoomInLeft')) {
+            card1.classList.add('animate__zoomInLeft');
+        }
+        
+        // Card 2 - zoomInRight
+        const card2 = document.getElementById('card2');
+        if (card2 && !card2.classList.contains('animate__zoomInRight')) {
+            card2.classList.add('animate__zoomInRight');
+        }
+    }
+}
+
+    // Función general que ejecuta todas las animaciones
+    function checkAllAnimations() {
+        checkAnimationsSec1();
+        checkAnimationsSec2();
+        checkAnimationsSec3();
+        checkAnimationsSec4();
+    }
+
+    // Ejecutar al cargar la página, al hacer scroll y cuando el DOM esté listo
+    window.addEventListener('load', checkAllAnimations);
+    window.addEventListener('scroll', checkAllAnimations);
+    window.addEventListener('resize', checkAllAnimations); // Por si acaso
+    document.addEventListener('DOMContentLoaded', checkAllAnimations);
+</script>
+
+</body>
+</html>
